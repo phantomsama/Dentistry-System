@@ -1,0 +1,92 @@
+{% extends 'admin/admin.html' %}
+
+{% block content %}
+        <!--内容-->
+        <section class="content-header">
+            <h1>Dentistry System</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Homepage</a></li>
+                <li class="active">Control Panel</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Image Example 1</h3>
+                        </div>
+                        <div class="box-body">
+                            <img style="width: 100%" src="{{ url_for('static',filename='base/images/sli2.jpg') }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Restorative Dentistry Clinical Handbook 2018</h3>
+                        </div>
+                        <div class="box-body">
+                            <p>
+                                This book has been created as an introduction to the clinics at Leeds Dental Institute and it contains information about the clinics (equipment, responsibilities expected from the student/staff such as professional conduct, patient management...) and general clinical working practices (infection prevention and control, x-ray facilities...) as well as aspects related to the different restorative clinical procedures carried out in clinics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Acknowledgements</h3>
+                        </div>
+                        <div class="box-body" >
+                            <p>
+                                A big thank you to all members of staff who kindly reviewed parts of this material, in special Sharon Kelly who revised/updated the ‘General working practices’ section of this book.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static',filename='js/echarts.min.js') }}"></script>
+    <script>
+    var myChart = echarts.init(document.getElementById('meminfo'));
+    option = {
+		backgroundColor: "white",
+		tooltip: {
+			formatter: "{a} <br/>{b} : {c}%"
+		},
+		toolbox: {
+			feature: {
+				restore: {},
+				saveAsImage: {}
+			}
+		},
+		series: [{
+			name: 'Memory usage',
+			type: 'gauge',
+			detail: {
+				formatter: '{value}%'
+			},
+			data: [{
+				value: 50,
+				name: 'Memory usage'
+			}]
+		}]
+	};
+    setInterval(function () {
+        option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+        myChart.setOption(option, true);
+    },2000);
+
+</script>
+    <script>
+    $(document).ready(function(){
+        $("#g-1").addClass("active");
+        $("#g-1-1").addClass("active");
+    });
+</script>
+{% endblock %}

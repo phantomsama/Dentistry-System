@@ -1,0 +1,94 @@
+﻿{% extends "home/home.html" %}
+
+{% block content %}
+
+<div id="why1">
+  <div class="container">
+
+    <h2 class="animated">Study with us</h2>
+
+    <div class="title1 animated">Research and Innovation<br>Equality and Inclusion</div>
+    <br><br>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why1.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why1_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">Undergraduate</div>
+                <div class="txt2">Learn from expert staff in world-class clinical training facilities with our Undergraduate courses.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why2.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why2_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">Masters</div>
+                <div class="txt2">Further develop your understanding with our selection of Masters courses and benefit from award winning career support.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why3.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why3_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">Research degrees</div>
+                <div class="txt2">Join our outstanding research community and contribute towards important new discovery as you study.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="{{ url_for('static',filename='base/images/why4.png') }}" alt="" class="img1 img-responsive">
+                <img src="{{ url_for('static',filename='base/images/why4_hover.png') }}" alt="" class="img2 img-responsive">
+              </figure>
+              <div class="caption">
+                <div class="txt1">Continuing professional development</div>
+                <div class="txt2">Top up specialist professional skills with our range of masterclasses taught by leading experts.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="company1">
+  <div class="container">
+
+    <h2 class="animated">School of Dentistry</h2>
+    <div style="padding: 30px">
+      <div class="title1 animated">
+          The School of Dentistry is one of the country's leading centres for dental study and research. We're proud of our international reputation for the proficiency of our alumni, the insight of our research and the quality of facilities available to students and collaborators. We combine expert teaching with innovative research work, producing both the highest calibre of dental practitioners and research which will shape the discipline they work in.      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

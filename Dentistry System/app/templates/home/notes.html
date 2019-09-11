@@ -1,0 +1,26 @@
+{% extends "home/home.html" %}
+{% block content %}
+<div>
+    <img width=100% height=250px  src="{{url_for('static',filename='base/images/gonglue_banner.jpg')}}">
+</div>
+
+
+<div class="breadcrumbs1_wrapper">
+  <div class="container">
+    <div class="breadcrumbs1">
+      <a href="/">Homepage</a>
+      <span>/</span>
+      <a href="{{url_for('home.info',id=travels.scenic_id)}}">Subsections</a>
+      <span>/</span>&nbspNotes
+    </div>
+  </div>
+</div>
+
+<div id="team1">
+  <div class="container">
+    <h2 class="animated">{{travels.title}}</h2>
+    <div class="title1">Author：{{ travels.author }} &nbsp&nbsp&nbsp{{ travels.addtime }}</div>
+    <div class="content">{{travels.content|safe}}</div>
+  </div>
+</div>
+{% endblock %}

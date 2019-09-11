@@ -1,0 +1,73 @@
+﻿{% extends "home/home.html" %}
+
+{% block content %}
+
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>CONTACT INFO</h3>
+        <h4>Our address</h4>
+        <p>
+          School of Dentistry<br>University of XXXXx<br>XXXXx<br>XX2 9XX
+        </p>
+
+        <br>
+        <h4>FACULTY OF MEDICINE AND HEALTH</h4>
+        <p>
+          Faculty of Medicine and Health<br>School of Dentistry<br>School of Healthcare<br>School of Medicine<br>School of Psychology
+        </p>
+        <br>
+      </div>
+      <div class="col-sm-6">
+        <h3>Feedbacks</h3>
+        <div id="note"></div>
+        <div id="fields">
+        {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+            <div class="alert alert-success alert-dismissible">
+                <h4><i class="icon fa fa-check"></i> Operation Succeeded</h4>
+                {{ msg }}
+            </div>
+        {% endfor %}
+          <form id="ajax-contact-form" class="form-horizontal" action="" method="post" >
+            <div class="form-group">
+                <label>{{ form.name.lable}}</label>
+                {{ form.name }}
+                {% for err in form.name.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label >{{ form.email.label }}</label>
+                {{ form.email }}
+                {% for err in form.email.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                    <label >{{ form.content.label }}</label>
+                    {{ form.content }}
+                    {% for err in form.content.errors %}
+                    <div class="notification_error">{{ err }}</div>
+                {% endfor %}
+                </div>
+              </div>
+            </div>
+                {{ form.csrf_token }}
+                {{ form.submit }}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
